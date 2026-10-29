@@ -1,0 +1,33 @@
+﻿source_message_id,academic_program,subject,body,expected_category,expected_priority,expected_sensitive,expected_human_review
+SYN-001,Ingeniería Informática,Necesito cancelar materia mañana,El sistema no me permite cancelar Redes y el plazo vence mañana.,Matrícula,urgent,False,False
+SYN-002,Ingeniería Informática,Duda sobre electiva,¿Qué electivas puedo tomar el próximo semestre?,Asignaturas,medium,False,False
+SYN-003,Ingeniería Industrial,Práctica profesional,Tengo entrevista de práctica la próxima semana y necesito saber qué documento debo presentar.,Prácticas profesionales,medium,False,False
+SYN-004,Ingeniería Civil,Fecha de inscripción,¿Hasta cuándo está abierta la inscripción de materias?,Fechas y plazos,high,False,False
+SYN-005,Ingeniería Química,Requisito de grado,Quisiera confirmar si ya cumplo el requisito de segunda lengua.,Requisitos académicos,medium,False,False
+SYN-006,Ingeniería Informática,Certificado,¿Dónde puedo solicitar un certificado de estudios?,Solicitudes generales,low,False,False
+SYN-007,Ingeniería Informática,URGENTE inscripción hoy,Hoy cierra la inscripción y SIGA no me deja registrar la materia.,Matrícula,urgent,False,False
+SYN-008,Ingeniería Industrial,Cambio de grupo,Deseo cambiarme de grupo si todavía hay cupos.,Asignaturas,medium,False,False
+SYN-009,Ingeniería Civil,Situación personal,Tengo una situación médica que está afectando mis clases y necesito orientación.,Situaciones académicas particulares,high,True,True
+SYN-010,Ingeniería Química,Consulta general,¿Cuál es el horario de atención del director?,Solicitudes generales,low,False,False
+SYN-011,Ingeniería Informática,Homologación,¿Qué requisitos debo presentar para homologar una asignatura?,Requisitos académicos,medium,False,False
+SYN-012,Ingeniería Industrial,Entrega hoy,El documento de práctica vence hoy y no aparece aprobado.,Prácticas profesionales,urgent,False,False
+SYN-013,Ingeniería Civil,Pago matrícula,Tengo un problema financiero con el pago de matrícula y adjunto información bancaria.,Matrícula,high,True,True
+SYN-014,Ingeniería Química,Cambio de materia,Quiero retirar una asignatura pero no sé cuál es el procedimiento.,Asignaturas,medium,False,False
+SYN-015,Ingeniería Informática,Solicitud poco clara,Necesito ayuda con un tema de la universidad.,Otros,medium,False,True
+SYN-016,Ingeniería Industrial,Documento de identidad,Adjunto mi cédula para resolver un trámite académico.,Otros,medium,True,True
+SYN-017,Ingeniería Civil,Prácticas,¿Con quién debo hablar para iniciar mis prácticas el próximo semestre?,Prácticas profesionales,medium,False,False
+SYN-018,Ingeniería Química,Fecha límite viernes,Debo entregar un requisito antes del viernes o no podré inscribir el proyecto.,Fechas y plazos,high,False,False
+SYN-019,Ingeniería Informática,Información de programa,Quiero conocer el plan de estudios vigente.,Solicitudes generales,low,False,False
+SYN-020,Ingeniería Industrial,Requisito urgente,Mañana cierra el registro de grado y el sistema dice que me falta un requisito.,Requisitos académicos,urgent,False,False
+SYN-021,Ingeniería Civil,Nota de asignatura,Tengo una duda sobre una nota y quisiera saber con quién revisarla.,Asignaturas,medium,False,False
+SYN-022,Ingeniería Química,Caso disciplinario,Necesito orientación sobre un proceso disciplinario en curso.,Situaciones académicas particulares,high,True,True
+SYN-023,Ingeniería Informática,Recordatorio,Envié un correo la semana pasada y aún no tengo respuesta sobre mi caso.,Solicitudes generales,medium,False,False
+SYN-024,Ingeniería Industrial,Inscripción próxima,La inscripción cierra en dos días y tengo bloqueo de sistema.,Matrícula,high,False,False
+SYN-025,Ingeniería Civil,Requisito práctica,Necesito saber si el seguro es requisito para iniciar práctica.,Prácticas profesionales,medium,False,False
+SYN-026,Ingeniería Química,Plazo vencido,El plazo venció ayer y necesito saber si existe alguna alternativa.,Fechas y plazos,urgent,False,True
+SYN-027,Ingeniería Informática,Consulta asignatura,¿Esta materia tiene prerrequisito?,Asignaturas,low,False,False
+SYN-028,Ingeniería Industrial,Requisito académico,¿Cuántos créditos necesito para poder iniciar opción de grado?,Requisitos académicos,medium,False,False
+SYN-029,Ingeniería Civil,Solicitud general,"Gracias por la información, no requiero ninguna acción adicional.",Solicitudes generales,low,False,False
+SYN-030,Ingeniería Química,Situación particular,Por una emergencia familiar no podré asistir esta semana y necesito orientación académica.,Situaciones académicas particulares,high,True,True
+SYN-031,Ingeniería Informática,Registro de materia hoy,Necesito inscribir IA hoy porque mañana inicia el curso intensivo.,Matrícula,urgent,False,False
+SYN-032,Ingeniería Industrial,Otro,¿Me pueden indicar a qué dependencia corresponde una solicitud de parqueadero?,Otros,low,False,False

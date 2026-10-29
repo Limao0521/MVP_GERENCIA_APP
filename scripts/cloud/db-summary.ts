@@ -1,0 +1,11 @@
+import { serviceClient } from '../lib/env';
+const sb = serviceClient();
+const { data: alerts } = await sb.from('alerts').select('alert_type').eq('active', true);
+const c: Record<string, number> = {};
+for (const a of alerts ?? []) c[a.alert_type] = (c[a.alert_type] ?? 0) + 1;
+const { data: log } = await sb.from('ops_log').select('source,event,message,created_at').order('created_at', { ascending: false }).limit(4);
+const { data: runs } = await sb.from('classification_runs').select('provider,success');
+const { count } = await sb.from('cases').select('id', { count: 'exact', head: true });
+console.log({ cases: count, active_alerts: c, runs_by_provider: (runs ?? []).reduce((m: any, r) => ((m[`${r.provider}:${r.success}`] = (m[`${r.provider}:${r.success}`] ?? 0) + 1), m), {}) });
+console.log(log);
+process.exit(0);

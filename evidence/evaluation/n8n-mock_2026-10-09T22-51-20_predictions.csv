@@ -1,0 +1,33 @@
+id,split,subject,expected_category,expected_priority,expected_sensitive,expected_review,predicted_category,predicted_priority,predicted_sensitive,predicted_review,confidence,deadline,rule_hits,ai_success,latency_ms,traceable
+SYN-001,development,Necesito cancelar materia mañana,Matrícula,urgent,false,false,Matrícula,urgent,false,false,0.75,2026-10-08T04:59:59+00:00,PRIORITY-03 PRIORITY-05,true,45,true
+SYN-002,development,Duda sobre electiva,Asignaturas,medium,false,false,Asignaturas,medium,false,false,0.94,,PRIORITY-10-BASELINE,true,50,true
+SYN-003,development,Práctica profesional,Prácticas profesionales,medium,false,false,Prácticas profesionales,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,54,true
+SYN-004,development,Fecha de inscripción,Fechas y plazos,high,false,false,Fechas y plazos,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,60,true
+SYN-005,development,Requisito de grado,Requisitos académicos,medium,false,false,Requisitos académicos,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,70,true
+SYN-006,development,Certificado,Solicitudes generales,low,false,false,Solicitudes generales,low,false,false,0.95,,PRIORITY-07,true,48,true
+SYN-007,development,URGENTE inscripción hoy,Matrícula,urgent,false,false,Matrícula,urgent,false,false,0.95,2026-10-07T04:59:59+00:00,PRIORITY-02 PRIORITY-06 PRIORITY-05,true,55,true
+SYN-008,development,Cambio de grupo,Asignaturas,medium,false,false,Asignaturas,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,50,true
+SYN-009,development,Situación personal,Situaciones académicas particulares,high,true,true,Situaciones académicas particulares,high,true,true,0.95,,PRIORITY-01 AI-REVIEW-FLAG,true,73,true
+SYN-010,development,Consulta general,Solicitudes generales,low,false,false,Solicitudes generales,low,false,false,0.9,,PRIORITY-07,true,47,true
+SYN-011,development,Homologación,Requisitos académicos,medium,false,false,Requisitos académicos,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,50,true
+SYN-012,development,Entrega hoy,Prácticas profesionales,urgent,false,false,Prácticas profesionales,urgent,false,false,0.9,2026-10-07T04:59:59+00:00,PRIORITY-02 PRIORITY-06 PRIORITY-05,true,51,true
+SYN-013,development,Pago matrícula,Matrícula,high,true,true,Matrícula,high,true,true,0.95,,PRIORITY-01 AI-REVIEW-FLAG,true,48,true
+SYN-014,development,Cambio de materia,Asignaturas,medium,false,false,Asignaturas,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,49,true
+SYN-015,development,Solicitud poco clara,Otros,medium,false,true,Otros,medium,false,true,0.3,,PRIORITY-08 PRIORITY-09 AI-REVIEW-FLAG,true,53,true
+SYN-016,development,Documento de identidad,Otros,medium,true,true,Otros,medium,true,true,0.3,,PRIORITY-01 PRIORITY-10-BASELINE PRIORITY-09 AI-REVIEW-FLAG,true,50,true
+SYN-017,evaluation,Prácticas,Prácticas profesionales,medium,false,false,Prácticas profesionales,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,52,true
+SYN-018,evaluation,Fecha límite viernes,Fechas y plazos,high,false,false,Requisitos académicos,high,false,false,0.71,2026-10-09T04:59:59+00:00,PRIORITY-04 PRIORITY-05,true,45,true
+SYN-019,evaluation,Información de programa,Solicitudes generales,low,false,false,Solicitudes generales,low,false,false,0.9,,PRIORITY-07,true,48,true
+SYN-020,evaluation,Requisito urgente,Requisitos académicos,urgent,false,false,Requisitos académicos,urgent,false,false,0.95,2026-10-08T04:59:59+00:00,PRIORITY-03 PRIORITY-06 PRIORITY-05,true,55,true
+SYN-021,evaluation,Nota de asignatura,Asignaturas,medium,false,false,Asignaturas,medium,false,false,0.94,,PRIORITY-10-BASELINE,true,46,true
+SYN-022,evaluation,Caso disciplinario,Situaciones académicas particulares,high,true,true,Situaciones académicas particulares,high,true,true,0.95,,PRIORITY-01 AI-REVIEW-FLAG,true,51,true
+SYN-023,evaluation,Recordatorio,Solicitudes generales,medium,false,false,Solicitudes generales,low,false,false,0.95,,PRIORITY-07,true,50,true
+SYN-024,evaluation,Inscripción próxima,Matrícula,high,false,false,Matrícula,high,false,false,0.92,2026-10-09T04:59:59+00:00,PRIORITY-04 PRIORITY-05,true,46,true
+SYN-025,evaluation,Requisito práctica,Prácticas profesionales,medium,false,false,Prácticas profesionales,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,48,true
+SYN-026,evaluation,Plazo vencido,Fechas y plazos,urgent,false,true,Fechas y plazos,urgent,false,true,0.86,2026-10-06T04:59:59+00:00,PRIORITY-02 PRIORITY-02-EXPIRED PRIORITY-05,true,47,true
+SYN-027,evaluation,Consulta asignatura,Asignaturas,low,false,false,Asignaturas,low,false,false,0.95,,PRIORITY-10-BASELINE,true,43,true
+SYN-028,evaluation,Requisito académico,Requisitos académicos,medium,false,false,Requisitos académicos,medium,false,false,0.95,,PRIORITY-10-BASELINE,true,49,true
+SYN-029,evaluation,Solicitud general,Solicitudes generales,low,false,false,Solicitudes generales,low,false,false,0.9,,PRIORITY-07,true,47,true
+SYN-030,evaluation,Situación particular,Situaciones académicas particulares,high,true,true,Situaciones académicas particulares,high,true,true,0.95,,PRIORITY-01 PRIORITY-05 AI-REVIEW-FLAG,true,49,true
+SYN-031,evaluation,Registro de materia hoy,Matrícula,urgent,false,false,Matrícula,urgent,false,true,0.67,2026-10-07T04:59:59+00:00,PRIORITY-02 PRIORITY-09 AI-REVIEW-FLAG,true,48,true
+SYN-032,evaluation,Otro,Otros,low,false,false,Otros,low,false,false,0.9,,PRIORITY-10-BASELINE,true,47,true

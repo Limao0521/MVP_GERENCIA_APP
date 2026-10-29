@@ -1,0 +1,12 @@
+import { n8n } from './n8n-api';
+const wf = process.argv[2];
+const list = await n8n('GET', `/rest/executions?filter=${encodeURIComponent(JSON.stringify({ workflowId: wf }))}&limit=5`);
+const items = list.json.data?.results ?? list.json.data ?? [];
+console.log(items.map((e: any) => `${e.id} ${e.status} ${e.startedAt}`).join('\n'));
+const id = process.argv[3] ?? items.find((e: any) => e.status === 'success')?.id;
+const ex = await n8n('GET', `/rest/executions/${id}`);
+const raw = ex.json.data?.data;
+const s = typeof raw === 'string' ? raw : JSON.stringify(raw);
+for (const k of ['gpt-4o-mini', 'OpenAI Analysis', 'chatcmpl', 'model', 'finish_reason', 'Mock AI Analysis']) console.log(k, s.includes(k));
+const m = s.match(/"(gpt-4o-mini[^"]*)"/g); console.log([...new Set(m ?? [])].slice(0, 5));
+process.exit(0);

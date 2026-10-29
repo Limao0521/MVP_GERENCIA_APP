@@ -1,0 +1,224 @@
+{
+  "name": "Outlook Calendar Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "responseMode": "streaming"
+        }
+      },
+      "id": "1f306315-4398-4d42-8574-e96bf927c4d1",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        112
+      ],
+      "webhookId": "bf67bb7b-80e2-4db0-bd11-48e39c6f7abc"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a scheduling assistant that automates the user's Microsoft Outlook calendar. The user is in the America/Bogota timezone. You have three tools:\n- create_event: schedule a new calendar event/meeting.\n- get_events: list or search existing calendar events.\n- get_emails: read emails when you need context to schedule something from a message.\n\nGuidelines:\n- When scheduling, always produce start and end in ISO 8601 local time (America/Bogota). If the user gives only a start time, default the event to 1 hour long.\n- If the user does not give a date, assume today.\n- After creating an event, confirm the title, date and time back to the user."
+        }
+      },
+      "id": "3c7ffe27-ddfe-47a9-92d2-55541937834c",
+      "name": "Outlook Calendar Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        352,
+        112
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "c7537ea3-ce96-4a79-bfba-aa01a3315943",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        224,
+        336
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": null,
+          "name": "Gateway credits",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "event",
+        "operation": "create",
+        "calendarId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "AQMkADAwATM0MDAAMS0zMGViLThkYjUtMDACLTAwCgBGAAADHG8US8mRCUa3nP6SAZaz2AcASUtFCEp4hUik0BdfoAI1ywAAAgEGAAAASUtFCEp4hUik0BdfoAI1ywAAAjZ6AAAA",
+          "cachedResultName": "Calendar"
+        },
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('subject', 'The title/name of the calendar event or meeting') }}",
+        "startDateTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('start', 'Event start date-time in ISO 8601 format, e.g. 2026-09-18T13:00:00') }}",
+        "endDateTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('end', 'Event end date-time in ISO 8601 format, e.g. 2026-09-18T14:00:00') }}",
+        "additionalFields": {
+          "timeZone": "America/Bogota"
+        }
+      },
+      "id": "0a395c64-81b1-4a0d-91e4-859397a1074d",
+      "name": "create_event",
+      "type": "n8n-nodes-base.microsoftOutlookTool",
+      "typeVersion": 2,
+      "position": [
+        352,
+        528
+      ],
+      "webhookId": "9e4a25b1-600f-4687-bd61-5311e76a819b",
+      "credentials": {
+        "microsoftOutlookOAuth2Api": {
+          "id": "z0BFnznPkkkUlPVe",
+          "name": "Microsoft Outlook account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "event",
+        "limit": 20,
+        "output": "fields",
+        "fields": [
+          "subject",
+          "start",
+          "end",
+          "location",
+          "organizer",
+          "webLink"
+        ],
+        "filters": {}
+      },
+      "id": "fb1f524a-a504-4c56-8b5f-4b5c5b70aacb",
+      "name": "get_events",
+      "type": "n8n-nodes-base.microsoftOutlookTool",
+      "typeVersion": 2,
+      "position": [
+        480,
+        336
+      ],
+      "webhookId": "fde4ec85-5e7d-4594-a0c7-d2e39404f19c",
+      "credentials": {
+        "microsoftOutlookOAuth2Api": {
+          "id": "z0BFnznPkkkUlPVe",
+          "name": "Microsoft Outlook account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 10,
+        "filtersUI": {
+          "values": {
+            "filterBy": "search",
+            "search": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('search_term', 'Search term to find emails related to a meeting (e.g. sender or subject). Leave empty for latest emails.') }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "c7c27ed0-6123-4c37-968f-e19181705bff",
+      "name": "get_emails",
+      "type": "n8n-nodes-base.microsoftOutlookTool",
+      "typeVersion": 2,
+      "position": [
+        352,
+        336
+      ],
+      "webhookId": "8c9aab98-89e0-48d2-8071-5d9ad52bf82b",
+      "credentials": {
+        "microsoftOutlookOAuth2Api": {
+          "id": "z0BFnznPkkkUlPVe",
+          "name": "Microsoft Outlook account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Outlook Calendar Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Outlook Calendar Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Outlook Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_events": {
+      "ai_tool": [
+        [
+          {
+            "node": "Outlook Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_emails": {
+      "ai_tool": [
+        [
+          {
+            "node": "Outlook Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "462dbf97-d5b2-4bba-93ab-5a54feaf134e",
+  "meta": {
+    "instanceId": "c0e18fd1c9c8652a10cd7161f7408d78fcaf5f41aa7bcf33302c8a9acd2dd677"
+  },
+  "nodeGroups": [],
+  "id": "8furxPaB0kgY6hb8",
+  "tags": []
+}

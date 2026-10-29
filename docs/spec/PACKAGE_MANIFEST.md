@@ -1,0 +1,27 @@
+# Package manifest
+
+- `.env.example` — 357 bytes
+- `00_SOURCE_ANALYSIS.md` — 5520 bytes
+- `01_MVP_SCOPE_AND_DOD.md` — 2967 bytes
+- `02_FUNCTIONAL_REQUIREMENTS.md` — 2974 bytes
+- `03_NON_FUNCTIONAL_REQUIREMENTS.md` — 1800 bytes
+- `04_ARCHITECTURE.md` — 2747 bytes
+- `05_DATA_MODEL.md` — 2512 bytes
+- `06_AI_ANALYSIS_SPEC.md` — 3079 bytes
+- `07_BUSINESS_RULES_AND_SLA.md` — 3083 bytes
+- `08_N8N_WORKFLOWS.md` — 1963 bytes
+- `09_FRONTEND_UX.md` — 1906 bytes
+- `10_API_AND_PAYLOAD_CONTRACTS.md` — 1624 bytes
+- `11_SECURITY_AND_GOVERNANCE.md` — 1583 bytes
+- `12_TEST_STRATEGY.md` — 1845 bytes
+- `13_DEPLOYMENT_RUNBOOK.md` — 1324 bytes
+- `14_CHAPTER_8_EVIDENCE_PLAN.md` — 1603 bytes
+- `15_IMPLEMENTATION_ROADMAP.md` — 1207 bytes
+- `16_TRACEABILITY_MATRIX.md` — 1103 bytes
+- `17_CLAUDE_MASTER_PROMPT.md` — 3920 bytes
+- `18_CLAUDE_EXECUTION_CHECKLIST.md` — 1237 bytes
+- `README.md` — 2503 bytes
+- `acceptance_tests.csv` — 1424 bytes
+- `sample_payloads.json` — 1190 bytes
+- `supabase_schema.sql` — 3964 bytes
+- `synthetic_cases.csv` — 5009 bytes

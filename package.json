@@ -1,0 +1,44 @@
+{
+  "name": "mvp-gerencia-itops",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MVP funcional: triage de solicitudes estudiantiles (n8n Cloud + OpenAI + Supabase + React)",
+  "type": "module",
+  "workspaces": [
+    "app"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace app",
+    "build": "npm run build:n8n && npm run build --workspace app",
+    "lint": "tsc -p tsconfig.json --noEmit && npm run lint --workspace app",
+    "test": "vitest run core",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "playwright test",
+    "test:all": "npm test && npm run test:integration && npm run test:e2e",
+    "build:n8n": "tsx scripts/build-n8n.ts",
+    "eval": "tsx scripts/evaluate.ts",
+    "eval:n8n": "tsx scripts/evaluate.ts --via-n8n",
+    "seed:users": "tsx scripts/seed-users.ts",
+    "seed:demo": "tsx scripts/seed-demo.ts",
+    "ingest": "tsx scripts/ingest.ts",
+    "alerts": "tsx scripts/run-alerts.ts",
+    "db:start": "supabase start -x studio,imgproxy,vector,logflare,edge-runtime,storage-api,realtime,supavisor,postgres-meta",
+    "db:reset": "supabase db reset",
+    "smoke:n8n": "tsx scripts/smoke-n8n.ts",
+    "n8n:local": "bash scripts/n8n-local.sh",
+    "reset:demo": "tsx scripts/reset-demo.ts",
+    "cloud:n8n": "tsx scripts/cloud/n8n-deploy.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5",
+    "dotenv": "^18.0.7",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.3"
+  }
+}

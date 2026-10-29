@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "mode": "n8n-openai-promptv2",
+    "provider": "openai",
+    "prompt_version": "v2",
+    "executed_at": "2026-10-10T00:14:47.259Z",
+    "received_at_reference": "2026-10-06T09:00:00-05:00",
+    "threshold": 0.7,
+    "run_id": "EVAL-202610100012",
+    "webhook": "https://tarean8n.app.n8n.cloud/webhook/student-request-demo",
+    "duplicate_prevention": "5/5"
+  },
+  "metrics": {
+    "overall": {
+      "cases": 32,
+      "category_accuracy_pct": 90.6,
+      "priority_accuracy_pct": 81.3,
+      "priority_within_one_level_pct": 96.9,
+      "urgent_recall_pct": 100,
+      "urgent_precision_pct": 85.7,
+      "sensitive_recall_pct": 100,
+      "sensitive_false_positives": 0,
+      "human_review_recall_pct": 85.7,
+      "human_review_flagged_total": 6,
+      "ai_failures": 0,
+      "avg_latency_ms": 1832,
+      "max_latency_ms": 2345,
+      "traceability_completeness_pct": 100,
+      "routing_accuracy": "N/A — el dataset no incluye responsable esperado"
+    },
+    "development": {
+      "cases": 16,
+      "category_accuracy_pct": 93.8,
+      "priority_accuracy_pct": 81.3,
+      "priority_within_one_level_pct": 93.8,
+      "urgent_recall_pct": 100,
+      "urgent_precision_pct": 100,
+      "sensitive_recall_pct": 100,
+      "sensitive_false_positives": 0,
+      "human_review_recall_pct": 100,
+      "human_review_flagged_total": 4,
+      "ai_failures": 0,
+      "avg_latency_ms": 1828,
+      "max_latency_ms": 2345,
+      "traceability_completeness_pct": 100,
+      "routing_accuracy": "N/A — el dataset no incluye responsable esperado"
+    },
+    "evaluation": {
+      "cases": 16,
+      "category_accuracy_pct": 87.5,
+      "priority_accuracy_pct": 81.3,
+      "priority_within_one_level_pct": 100,
+      "urgent_recall_pct": 100,
+      "urgent_precision_pct": 75,
+      "sensitive_recall_pct": 100,
+      "sensitive_false_positives": 0,
+      "human_review_recall_pct": 66.7,
+      "human_review_flagged_total": 2,
+      "ai_failures": 0,
+      "avg_latency_ms": 1837,
+      "max_latency_ms": 2081,
+      "traceability_completeness_pct": 100,
+      "routing_accuracy": "N/A — el dataset no incluye responsable esperado"
+    }
+  }
+}

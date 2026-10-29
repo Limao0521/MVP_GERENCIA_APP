@@ -1,0 +1,19 @@
+﻿id,scenario,action,expected_result,priority
+AT-001,Demo ingestion,POST synthetic message,Case created with unique ID,P0
+AT-002,AI classification,Run SYN-001,Valid allowed category + strict JSON,P0
+AT-003,Priority deadline,Deadline <= 1 business day,Priority urgent,P0
+AT-004,Sensitive case,Run SYN-009,sensitive=true and human review,P0
+AT-005,Low information,Run SYN-015,human review=true,P0
+AT-006,Human override,Change urgent to high,Current priority updated; suggested preserved; event created,P0
+AT-007,Status workflow,received to closed via valid path,All state changes stored,P0
+AT-008,Audit trail,Modify category/priority/status,"Events show actor, old, new, timestamp",P0
+AT-009,SLA alert,Create overdue case,Active SLA alert visible,P0
+AT-010,Two-day follow-up,No management for 2 business days,Follow-up alert created,P0
+AT-011,AI provider failure,Force provider error,Case persists and requires human review,P0
+AT-012,Idempotency,Send same source_message_id twice,Only one case,P0
+AT-013,Dashboard,Seed cases,Counts match DB,P0
+AT-014,Filters,Filter urgent + open,Only matching cases,P0
+AT-015,Close,Resolve and close case,resolved_at/closed_at set,P0
+AT-016,Demo Mode,No OpenAI/Outlook credentials,End-to-end flow still works,P0
+AT-017,Outlook adapter,Credentials configured,Incoming test email enters shared pipeline,P1
+AT-018,RLS director,Director role,Only own program cases visible,P1

@@ -1,0 +1,12 @@
+node_modules
+**/node_modules
+.n8n-local
+evidence
+test-results
+playwright-report
+supabase/.temp
+supabase/.branches
+.env
+.env.*
+!.env.example
+app/dist

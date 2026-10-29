@@ -1,0 +1,34 @@
+{
+  "demo_ingestion": {
+    "source_message_id": "demo-001",
+    "source_channel": "demo",
+    "sender_email": "estudiante001@example.edu",
+    "recipient_email": "director.informatica@example.edu",
+    "academic_program": "Ingeniería Informática",
+    "subject": "Cancelación antes de fecha límite",
+    "body": "Necesito cancelar una materia antes de mañana porque el sistema no me permite hacerlo y podría perder el plazo.",
+    "received_at": "2026-10-09T09:00:00-05:00"
+  },
+  "ai_output": {
+    "category": "Matrícula",
+    "summary": "El estudiante solicita apoyo para cancelar una asignatura antes de una fecha límite próxima.",
+    "urgency": "high",
+    "impact": "high",
+    "deadline": "2026-10-10T23:59:59-05:00",
+    "deadline_explicit": true,
+    "suggested_responsible": "Director de programa",
+    "sensitive": false,
+    "sensitive_reason": null,
+    "confidence": 0.92,
+    "needs_human_review": false,
+    "reasoning_summary": "Existe un plazo explícito cercano con posible impacto académico."
+  },
+  "rule_output": {
+    "suggested_priority": "urgent",
+    "needs_human_review": false,
+    "rule_hits": [
+      "PRIORITY-03",
+      "PRIORITY-05"
+    ]
+  }
+}

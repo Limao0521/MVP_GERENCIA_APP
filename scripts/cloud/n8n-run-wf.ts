@@ -1,0 +1,10 @@
+import { n8n } from './n8n-api';
+const [id, trigger = 'Manual Run'] = process.argv.slice(2);
+const wf = (await n8n('GET', `/rest/workflows/${id}`)).json.data;
+const r = await n8n('POST', `/rest/workflows/${id}/run`, { workflowData: wf, triggerToStartFrom: { name: trigger } });
+console.log(r.status, JSON.stringify(r.json).slice(0, 300));
+await new Promise((res) => setTimeout(res, 15000));
+const list = await n8n('GET', `/rest/executions?filter=${encodeURIComponent(JSON.stringify({ workflowId: id }))}&limit=3`);
+const items = list.json.data?.results ?? [];
+console.log(items.map((e: any) => `${e.id} ${e.status} ${e.mode} ${e.startedAt}`).join('\n'));
+process.exit(0);
